@@ -8,27 +8,28 @@ import os
 # 'container': the wrapper for one news item
 # 'title_tag': the tag inside that wrapper for the headline
 SOURCES = [
-    {
-        "id": "adaderana_tech",
-        "name": "Ada Derana Technology",
-        "url": "https://www.adaderana.lk/technology-news/",
-        "container": "div.story-text",
-        "title_tag": "h2"
-    },
-    {
-        "id": "lankatruth_politics",
-        "name": "Lanka Truth Politics",
-        "url": "https://lankatruth.com/si/?cat=3",
-        "container": "article",
-        "title_tag": "h3"
-    },
-    {
-        "id": "dinamina_local",
-        "name": "Dinamina Local",
-        "url": "https://www.dinamina.lk/category/local/",
-        "container": "div.td-block-span6",
-        "title_tag": "h3"
-    }
+   {
+    "id": "adaderana_tamil",
+    "name": "Ada Derana Tamil",
+    "url": "https://tamil.adaderana.lk/categories/breakingnews",
+    "container": "div.mt-4",
+    "title_tag": "p.font-medium",
+    "base_url": "https://tamil.adaderana.lk"
+}
+    # {
+    #     "id": "lankatruth_politics",
+    #     "name": "Lanka Truth Politics",
+    #     "url": "https://lankatruth.com/si/?cat=3",
+    #     "container": "article",
+    #     "title_tag": "h3"
+    # },
+    # {
+    #     "id": "dinamina_local",
+    #     "name": "Dinamina Local",
+    #     "url": "https://www.dinamina.lk/category/local/",
+    #     "container": "div.td-block-span6",
+    #     "title_tag": "h3"
+    # }
     # Add your remaining 27 pages here in the same format...
 ]
 
@@ -65,7 +66,7 @@ def generate_rss(source):
             link = source['url'],
             description = f"Latest news from {source['name']}",
             lastBuildDate = datetime.datetime.now(),
-            items = items
+            items = items 
         )
 
         # Save to a dedicated folder
